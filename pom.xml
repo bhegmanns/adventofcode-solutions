@@ -10,6 +10,7 @@
     <modules>
         <module>adventofcode-2020</module>
         <module>adventofcode-common</module>
+        <module>adventofcode-application</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -49,12 +50,17 @@
         <dependencies>
             <dependency>
                 <groupId>de.hegmanns.training</groupId>
-                <artifactId>adventofcode-2020</artifactId>
+                <artifactId>adventofcode-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>de.hegmanns.training</groupId>
-                <artifactId>adventofcode-common</artifactId>
+                <artifactId>adventofcode-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.hegmanns.training</groupId>
+                <artifactId>adventofcode-2020</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
