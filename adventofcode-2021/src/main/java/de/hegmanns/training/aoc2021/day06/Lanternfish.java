@@ -1,9 +1,9 @@
 package de.hegmanns.training.aoc2021.day06;
 
-public class Laternfish {
+public class Lanternfish {
     private int timer;
 
-    public Laternfish(int timer) {
+    public Lanternfish(int timer) {
         this.timer = timer;
     }
 
