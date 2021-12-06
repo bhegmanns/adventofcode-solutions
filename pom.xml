@@ -12,6 +12,7 @@
         <module>adventofcode-common</module>
         <module>adventofcode-application</module>
         <module>adventofcode-2019</module>
+        <module>adventofcode-2021</module>
     </modules>
     <packaging>pom</packaging>
 
