@@ -12,7 +12,7 @@ import java.util.List;
 public class SolutionWithTestDataTest {
 
     @ParameterizedTest(name = "Data-Test for day {0} part {1}, expected solution {2}")
-//    @CsvSource({"04, 1, 4512", "04, 2, 1924"})
+//    @CsvSource({"07, 1, 37"})
     @Disabled // disable because there isn't any source
     public void checkForOnlyOnePart(String day, int part,  String solution1) throws Exception {
         String className1 = "de.hegmanns.training.aoc2021.SolutionDay" + day;
@@ -32,7 +32,7 @@ public class SolutionWithTestDataTest {
     }
 
     @ParameterizedTest(name = "Data-Test for day {0}")
-    @CsvSource({"01, 7, 5", "02, 150, 900", "03, 198, 230", "04, 4512, 1924", "05, 5, 12", "06, 5934, 26984457539"})
+    @CsvSource({"01, 7, 5", "02, 150, 900", "03, 198, 230", "04, 4512, 1924", "05, 5, 12", "06, 5934, 26984457539", "07, 37, 168"})
     public void checkBothParts(String day, String solution1, String solution2) throws Exception {
         String className1 = "de.hegmanns.training.aoc2021.SolutionDay" + day;
         Class<?> solutionClass = Class.forName(className1);

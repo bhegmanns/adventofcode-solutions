@@ -34,7 +34,7 @@ public class SolutionWithDataTest {
 
 
     @ParameterizedTest(name = "Data-Test for day {0}")
-    @CsvSource({"01, 1184, 1158", "02, 1250395, 1451210346", "03, 738234, 3969126", "04, 11536,1284", "05, 7318, 19939", "06, 365862, 1653250886439"})
+    @CsvSource({"01, 1184, 1158", "02, 1250395, 1451210346", "03, 738234, 3969126", "04, 11536,1284", "05, 7318, 19939", "06, 365862, 1653250886439", "07, 328262, 90040997"})
     public void checkBothParts(String day, String solution1, String solution2) throws Exception {
         String className1 = "de.hegmanns.training.aoc2021.SolutionDay" + day;
         Class<?> solutionClass = Class.forName(className1);
