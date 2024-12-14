@@ -77,6 +77,16 @@ public class SolutionDay03 implements AoCSolution<Integer, Integer> {
         return coRate * oxygenGeneratorRate; // test-data 23 / 10
     }
 
+    @Override
+    public Integer getSolution1() {
+        return null;
+    }
+
+    @Override
+    public Integer getSolution2() {
+        return null;
+    }
+
     //
     public int calculateMostCommonBit(String input) {
         var count0 = input.replaceAll("1", "").length();

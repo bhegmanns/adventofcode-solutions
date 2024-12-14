@@ -5,7 +5,7 @@ import de.hegmanns.training.aoc.common.workflow.solution.SolutionImpl;
 import java.util.Optional;
 
 /**
- * A advent-of-code-solution is a central procedure for solve a advent-of-code-task
+ * A advent-of-code-solution is a central procedure for solve an advent-of-code-task
  *
  *
  */

@@ -44,4 +44,14 @@ public class SolutionDay01 implements AoCSolution<Integer, Integer> {
 
         return solvePart1(newList);
     }
+
+    @Override
+    public Integer getSolution1() {
+        return null;
+    }
+
+    @Override
+    public Integer getSolution2() {
+        return null;
+    }
 }

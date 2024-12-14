@@ -59,4 +59,14 @@ public class SolutionDay06 implements AoCSolution<Integer, Long> {
 
         return timers.stream().filter(t -> t.getTimerValue() != -1).map(TimerValueWithCountOfLanternfishes::getCountOfLanternfishes).mapToLong(Long::longValue).sum();
     }
+
+    @Override
+    public Integer getSolution1() {
+        return null;
+    }
+
+    @Override
+    public Long getSolution2() {
+        return null;
+    }
 }

@@ -31,6 +31,16 @@ public class SolutionDay05 implements AoCSolution<Integer, Integer> {
         return getCountOfAtLeastTimesOverlappedPoints(relevantLines, 2);
     }
 
+    @Override
+    public Integer getSolution1() {
+        return null;
+    }
+
+    @Override
+    public Integer getSolution2() {
+        return null;
+    }
+
     private static void incrementForPoint(Map<Point, Integer> map, Point point) {
         Integer i = map.get(point);
         if (i == null) {

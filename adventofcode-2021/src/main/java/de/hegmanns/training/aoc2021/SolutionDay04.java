@@ -46,4 +46,14 @@ public class SolutionDay04 implements AoCSolution<Integer, Integer> {
         }
         return unsolvedBingos.get(0).getSumUnsolved() * number;
     }
+
+    @Override
+    public Integer getSolution1() {
+        return null;
+    }
+
+    @Override
+    public Integer getSolution2() {
+        return null;
+    }
 }

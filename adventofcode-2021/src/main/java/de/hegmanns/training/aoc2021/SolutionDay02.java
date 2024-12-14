@@ -90,4 +90,14 @@ public class SolutionDay02 implements AoCSolution<Integer, Integer> {
 
         return currentX * currentY;
     }
+
+    @Override
+    public Integer getSolution1() {
+        return null;
+    }
+
+    @Override
+    public Integer getSolution2() {
+        return null;
+    }
 }

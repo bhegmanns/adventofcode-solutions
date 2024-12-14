@@ -46,4 +46,14 @@ public class SolutionDay07  implements AoCSolution<Integer, Integer>{
         }
         return neededFuels.stream().sorted().findFirst().get();
     }
+
+    @Override
+    public Integer getSolution1() {
+        return null;
+    }
+
+    @Override
+    public Integer getSolution2() {
+        return null;
+    }
 }
