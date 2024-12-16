@@ -21,9 +21,11 @@ public class SolutionDay05 implements AoCSolution<Long, Long> {
         return AoCFileReader.getInputAsList(SolutionDay04.class, FILE_NAME);
     }
 
+    PageOrderingRules allPageOrderingRules;
     List<PageOrderingRule> pageOrderingRules = new ArrayList<>();
+    List<Update> updates = new ArrayList<>();
 
-    public void foo(List<String> input) {
+    public void parseToInstances(List<String> input) {
 
         boolean fillPageOrderingRules = true;
         for (String line : input) {
@@ -36,19 +38,63 @@ public class SolutionDay05 implements AoCSolution<Long, Long> {
                     pageOrderingRules.add(new PageOrderingRule(split[0], split[1]));
                 }
             } else {
-
+                String[] numbers = line.split(",");
+                List<Integer> allNumbers = Arrays.stream(line.split(",")).map(Integer::parseInt).toList();
+                updates.add(new Update(allNumbers));
             }
         }
+
+        allPageOrderingRules = new PageOrderingRules(pageOrderingRules);
     }
 
     @Override
     public Long solvePart1(List<String> input) {
-        return 0L;
+        parseToInstances(input);
+
+        long sumOfMiddleNumbers = 0L;
+        int countOfNotMatching = 0;
+        for (Update update : updates) {
+            if (allPageOrderingRules.isMatching(update)) {
+                sumOfMiddleNumbers += update.getMiddleNumber();
+            } else {
+                countOfNotMatching++;
+            }
+        }
+
+        System.out.println("countOfNotMatching: " + countOfNotMatching);
+        return sumOfMiddleNumbers ;
     }
 
     @Override
     public Long solvePart2(List<String> input) {
-        return 0L;
+        parseToInstances(input);
+
+        List<Update> failedUpdates = new ArrayList<>();
+        long sumOfMiddleNumbers = 0L;
+        int countOfNotMatching = 0;
+        for (Update update : updates) {
+            if (allPageOrderingRules.isMatching(update)) {
+                sumOfMiddleNumbers += update.getMiddleNumber();
+            } else {
+                failedUpdates.add(update);
+                countOfNotMatching++;
+            }
+        }
+
+        System.out.println("countOfNotMatching: " + countOfNotMatching);
+        sumOfMiddleNumbers = 0L;
+
+        for (Update update : failedUpdates) {
+            Set<PageOrderingRule> possibleRules = allPageOrderingRules.gatherAllRelevantRules(update);
+            Update rebuiltUpdate = update.rebuild(possibleRules);
+            if (rebuiltUpdate == null) {
+                throw new RuntimeException("rebuild failed");
+            }
+            sumOfMiddleNumbers += rebuiltUpdate.getMiddleNumber();
+        }
+
+
+        return sumOfMiddleNumbers ;
     }
 
     @Override

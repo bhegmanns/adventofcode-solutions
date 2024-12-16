@@ -16,7 +16,7 @@ public class SolutionDay05Test {
         List<String> inputAsList = AoCFileReader.getInputAsList(SolutionDay05.class, EXAMPLE_FILE_NAME);
         SolutionDay05 solution = new SolutionDay05();
 
-        MatcherAssert.assertThat(solution.solvePart1(inputAsList), Matchers.equalTo(18L));
+        MatcherAssert.assertThat(solution.solvePart1(inputAsList), Matchers.equalTo(143L));
     }
 
     @Test
@@ -24,7 +24,7 @@ public class SolutionDay05Test {
         List<String> inputAsList = AoCFileReader.getInputAsList(SolutionDay05.class, EXAMPLE_FILE_NAME);
         SolutionDay05 solution = new SolutionDay05();
 
-        MatcherAssert.assertThat(solution.solvePart1(inputAsList), Matchers.equalTo(0L));
+        MatcherAssert.assertThat(solution.solvePart2(inputAsList), Matchers.equalTo(123L));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class SolutionDay05Test {
         List<String> inputAsList = AoCFileReader.getInputAsList(SolutionDay05.class, SolutionDay05.FILE_NAME);
         SolutionDay05 solution = new SolutionDay05();
 
-        MatcherAssert.assertThat(solution.solvePart1(inputAsList), Matchers.equalTo(0L));
+        MatcherAssert.assertThat(solution.solvePart1(inputAsList), Matchers.equalTo(5639L));
     }
 
     @Test
