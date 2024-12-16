@@ -39,6 +39,6 @@ public class SolutionDay03Test {
         List<String> inputAsList = AoCFileReader.getInputAsList(SolutionDay03.class, SolutionDay03.FILE_NAME);
         SolutionDay03 solution = new SolutionDay03();
 
-        MatcherAssert.assertThat(solution.solvePart2(inputAsList), Matchers.equalTo(569L));
+        MatcherAssert.assertThat(solution.solvePart2(inputAsList), Matchers.equalTo(83595109L));
     }
 }

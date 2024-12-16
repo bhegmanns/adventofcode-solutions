@@ -22,12 +22,6 @@ public class PageOrderingRules {
                 .anyMatch(pr -> pr.getBefore()==firstNumber && pr.getAfter()==secondNumber);
     }
 
-    public PageOrderingRule getRule(long aPageNumber, long anotherPageNumber) {
-        return rules.stream()
-                .filter(pr -> pr.getBefore() == aPageNumber || pr.getBefore() == anotherPageNumber)
-                .filter(pr -> pr.getAfter() == aPageNumber || pr.getAfter() == anotherPageNumber)
-                .findFirst().orElse(null);
-    }
 
     public List<PageOrderingRule> getRules(int firstPageNumber, int secondPageNumber) {
         return rules.stream()
@@ -35,15 +29,17 @@ public class PageOrderingRules {
                 .collect(Collectors.toList());
     }
 
-    private Set<PageOrderingRule> gatherRelevantRules(long pageNumber) {
-        return rules.stream().filter(pr -> pr.getBefore()==pageNumber || pr.getAfter()==pageNumber).collect(Collectors.toSet());
-    }
 
     public Set<PageOrderingRule> gatherAllRelevantRules(Update update) {
         Set<PageOrderingRule> relevantRules = new HashSet<>();
-        for (long pageNumber : update.getPages()) {
-            relevantRules.addAll(gatherRelevantRules(pageNumber));
+        List<Integer> pages = update.getPages();
+        for (var rule : rules) {
+            if (pages.contains(rule.getBefore()) && pages.contains(rule.getAfter())) {
+                relevantRules.add(rule);
+            }
         }
+
+
         return relevantRules;
     }
 

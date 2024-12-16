@@ -6,8 +6,11 @@ import java.util.*;
 
 @Data
 @AllArgsConstructor
+@ToString
 public class Update {
     private List<Integer> pages = new ArrayList<>();
+
+
 
     public Integer getMiddleNumber() {
         return pages.get(pages.size()/2);

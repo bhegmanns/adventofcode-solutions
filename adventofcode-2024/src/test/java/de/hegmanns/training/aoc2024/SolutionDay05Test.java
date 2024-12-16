@@ -8,7 +8,6 @@ import java.util.*;
 
 public class SolutionDay05Test {
     private static final String EXAMPLE_FILE_NAME = "day05_example.txt";
-    private static final String EXAMPLE2_FILE_NAME = "day05_2_example.txt";
 
 
     @Test
@@ -40,6 +39,6 @@ public class SolutionDay05Test {
         List<String> inputAsList = AoCFileReader.getInputAsList(SolutionDay05.class, SolutionDay05.FILE_NAME);
         SolutionDay05 solution = new SolutionDay05();
 
-        MatcherAssert.assertThat(solution.solvePart2(inputAsList), Matchers.equalTo(0L));
+        MatcherAssert.assertThat(solution.solvePart2(inputAsList), Matchers.equalTo(5273L));
     }
 }
