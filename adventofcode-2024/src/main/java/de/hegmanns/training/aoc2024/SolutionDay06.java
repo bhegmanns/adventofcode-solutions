@@ -196,6 +196,7 @@ public class SolutionDay06 implements AoCSolution<Long, Long> {
 
     private boolean foo(byte[][] map, Point newBarrierPosition,Point currentGuardPosition, Point direction) {
         if (map[newBarrierPosition.x()][newBarrierPosition.y()] == 1) {}
+        return false;
     }
 
     @Override
