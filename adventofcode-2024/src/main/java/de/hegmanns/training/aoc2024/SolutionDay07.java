@@ -2,15 +2,7 @@ package de.hegmanns.training.aoc2024;
 
 import de.hegmanns.training.aoc.common.AoCFileReader;
 import de.hegmanns.training.aoc.common.AoCSolution;
-import de.hegmanns.training.aoc.common.geometric.Point;
-import de.hegmanns.training.aoc2024.day06.NorthPoleMap;
-import de.hegmanns.training.aoc2024.day06.NorthpoleGuard;
-import de.hegmanns.training.aoc2024.day06.Path;
-import de.hegmanns.training.aoc2024.day07.Operation;
-import org.apache.commons.lang3.tuple.Pair;
-
-import java.util.ArrayList;
-import java.util.HashSet;
+import de.hegmanns.training.aoc2024.day07.*;
 import java.util.List;
 
 public class SolutionDay07 implements AoCSolution<Long, Long> {
@@ -34,14 +26,16 @@ public class SolutionDay07 implements AoCSolution<Long, Long> {
     @Override
     public Long solvePart1(List<String> input) {
         List<Operation> operations = input.stream().map(Operation::parse).toList();
-        return operations.stream().map(o -> o.atLeastOneOperatorExistsForOperandAndResult()?o.getExpectedResult():0L)
+        return operations.stream().map(o -> o.atLeastOneOperatorExistsForOperandAndResult(Operator.PLUS, Operator.TIMES)?o.getExpectedResult():0L)
                 .mapToLong(Long::longValue).sum();
     }
 
 
     @Override
     public Long solvePart2(List<String> input) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        List<Operation> operations = input.stream().map(Operation::parse).toList();
+        return operations.stream().map(o -> o.atLeastOneOperatorExistsForOperandAndResult(Operator.PLUS, Operator.TIMES, Operator.CONCATENATE)?o.getExpectedResult():0L)
+                .mapToLong(Long::longValue).sum();
     }
 
     @Override

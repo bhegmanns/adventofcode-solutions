@@ -4,7 +4,8 @@ import java.util.function.BiFunction;
 
 public enum Operator {
     PLUS((a,b) -> a+b),
-    TIMES((a,b) -> a*b);
+    TIMES((a,b) -> a*b),
+    CONCATENATE((a,b) -> Long.parseLong("" + a + b));
 
     private BiFunction<Long, Long, Long> function;
 

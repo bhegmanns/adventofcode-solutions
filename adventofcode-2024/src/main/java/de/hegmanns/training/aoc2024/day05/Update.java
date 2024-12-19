@@ -39,7 +39,6 @@ public class Update {
             }
             System.out.println(rules);
         }
-        //stack.add();
 
 
         return null;

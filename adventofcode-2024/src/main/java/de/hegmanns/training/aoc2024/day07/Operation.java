@@ -26,11 +26,11 @@ public class Operation {
     }
 
 
-    public boolean atLeastOneOperatorExistsForOperandAndResult() {
+    public boolean atLeastOneOperatorExistsForOperandAndResult(Operator... operators) {
 
-        long countOfCombinations = calculateCombinations();
-        Operator[] operators = {Operator.PLUS, Operator.TIMES};
-
+//        Operator[] operators = {Operator.PLUS, Operator.TIMES};
+        int countOfOperators = operators.length;
+        long countOfCombinations = calculateCombinations(countOfOperators);
 
         for (long currentCombination = 0 ; currentCombination < countOfCombinations ; currentCombination++) {
             Long result = null;
@@ -41,10 +41,8 @@ public class Operation {
                     result = operand;
                 } else {
                     // find the correct operator
-
-                    Operator operator = operators[(int) (combination % 2)];
-                    result = operators[(int) (combination % 2)].calculate(result, operand);
-                    combination /= 2;
+result = operators[(int) (combination % countOfOperators)].calculate(result, operand);
+                    combination /= countOfOperators;
                 }
             }
             if (expectedResult == result) {
@@ -56,10 +54,10 @@ public class Operation {
     }
 
 
-    private long calculateCombinations() {
+    private long calculateCombinations(long countOfOperators) {
         long result = 1;
         for (long operand : operands) {
-            result *= 2;
+            result *= countOfOperators;
         }
         return result;
     }
