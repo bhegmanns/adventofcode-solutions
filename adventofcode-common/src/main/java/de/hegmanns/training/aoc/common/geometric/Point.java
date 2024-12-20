@@ -1,6 +1,10 @@
 package de.hegmanns.training.aoc.common.geometric;
 
 public record Point(int x, int y) {
+    public static final Point DIRECTION_ONEUP = new Point(0, -1);
+    public static final Point DIRECTION_ONELEFT = new Point(-1, 0);
+    public static final Point DIRECTION_ONEDOWN = new Point(0, 1);
+    public static final Point DIRECTION_ONERIGHT = new Point(1, 0);
 
     public boolean isIn(Line line) {
         if (line.from().equals(this) || line.to().equals(this)) {
